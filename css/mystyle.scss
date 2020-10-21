@@ -1,0 +1,124 @@
+$bgcolor: rgb(240, 240, 240);
+$bgcoloractive: rgb(200, 200, 200);
+$border: 1px solid $bgcoloractive;
+
+* {box-sizing: border-box;}
+
+//стили для навигации
+.tabs {
+    overflow: hidden;
+    border: $border;
+    background-color: $bgcolor;
+
+    button {
+        background-color: $bgcolor;
+        font-size: 1.2em;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 15px 17px;
+        transition: 0.5s;
+        &:hover {
+            background-color: rgb(220, 220, 220);
+        }
+        
+    }
+    button.active {
+        background-color: $bgcoloractive;
+    }
+    
+}
+
+//стили для блоков
+.tabcontent {
+    display: none;
+    padding: 10px 20px;
+    border: $border;
+    border-top: none;
+}
+
+//стили для Москвы
+@mixin MyCursor {
+    color: $colorText;
+    font-weight: bold;
+    font-size: 1.3em;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 20px;
+    transition: 1s ease;
+    user-select: none;
+}
+$bgMyCursor: rgba(0, 0, 0, 0.5);
+$colorText: rgb(255, 255, 255);
+
+.mySlide {display: none;}
+
+.container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.numbertext {
+    color: $colorText;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    position: absolute;
+}
+
+.prev {
+    @include MyCursor;
+    &:hover {
+        background-color: $bgMyCursor;
+    }
+}
+
+.next {
+    right: 0;
+    @include MyCursor;
+    &:hover {
+        background-color: $bgMyCursor;
+    }
+}
+
+.indicator {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    background-color: $bgcoloractive;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    &:hover {
+        background-color: rgb(100, 100, 100);
+    }
+}
+
+.active {
+    background-color: rgb(100, 100, 100);
+}
+
+// стили для Санкт-Петербурга
+.mySlideS {display: none;}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    .demo {
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .activeS {
+        opacity: 1;
+    }
+}

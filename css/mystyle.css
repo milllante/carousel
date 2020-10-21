@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+.tabs {
+  overflow: hidden;
+  border: 1px solid #c8c8c8;
+  background-color: #f0f0f0;
+}
+.tabs button {
+  background-color: #f0f0f0;
+  font-size: 1.2em;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 17px;
+  transition: 0.5s;
+}
+.tabs button:hover {
+  background-color: gainsboro;
+}
+.tabs button.active {
+  background-color: #c8c8c8;
+}
+
+.tabcontent {
+  display: none;
+  padding: 10px 20px;
+  border: 1px solid #c8c8c8;
+  border-top: none;
+}
+
+.mySlide {
+  display: none;
+}
+
+.container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.numbertext {
+  color: white;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  position: absolute;
+}
+
+.prev {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 20px;
+  transition: 1s ease;
+  user-select: none;
+}
+.prev:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+  right: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 20px;
+  transition: 1s ease;
+  user-select: none;
+}
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.indicator {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: #c8c8c8;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.indicator:hover {
+  background-color: #646464;
+}
+
+.active {
+  background-color: #646464;
+}
+
+.mySlideS {
+  display: none;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+.column .demo {
+  opacity: 0.5;
+}
+.column .demo:hover {
+  opacity: 1;
+}
+.column .activeS {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=mystyle.css.map */

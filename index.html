@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Проверка знаний по html/css/js</title>
+        <link href="css/mystyle.css" rel="stylesheet" />
+        <script src="myscript.js"></script>
+    </head>
+    <body>
+        <div class="tabs">
+            <button class="tablink active" onclick="openCity(event, 'Moscow')">Москва</button>
+            <button class="tablink" onclick="openCity(event, 'StPetersburg')">Санкт-Петербург</button>
+        </div>
+
+        <!--Москва-->
+        <div id="Moscow" class="tabcontent" style="display: block;">
+            <div class="container">
+            <div class="mySlide" style="display: block;">
+                <div class="numbertext">1 / 3</div>
+                <img src="image/moscow1.jpg" style="width: 100%;"/>
+            </div>
+            <div class="mySlide">
+                <div class="numbertext">2 / 3</div>
+                <img src="image/moscow2.jpg" style="width: 100%;"/>
+            </div>
+            <div class="mySlide">
+                <div class="numbertext">3 / 3</div>
+                <img src="image/moscow3.jpg" style="width: 100%;"/>
+            </div>
+
+            <!--Вперед/назад-->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div><br>
+        <!--Маркер-->
+        <div style="text-align: center;">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+        </div>
+        </div>
+
+        <!--Санкт-Петербург-->
+        <div id="StPetersburg" class="tabcontent">
+            <div class="container">
+                <div class="mySlideS" style="display: block;">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="image/stpetersburg1.jpg" style="width: 100%;"/>
+                </div>
+                <div class="mySlideS">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="image/stpetersburg2.jpg" style="width: 100%;"/>
+                </div>
+                <div class="mySlideS">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="image/stpetersburg3.jpg" style="width: 100%;"/>
+                </div>
+                
+                <!-- Вперед/назад -->
+                <a class="prev" onclick="plusSlidesS(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlidesS(1)">&#10095;</a>
+                <br>
+
+                <!--Миниатюры-->
+                <div class="row">
+                    <div class="column">
+                        <img class="demo cursor activeS" src="image/stpetersburg1.jpg" style="width: 100%;" onclick="currentSlideS(1)" alt="StPetersburg">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="image/stpetersburg2.jpg" style="width: 100%;" onclick="currentSlideS(2)" alt="StPetersburg">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="image/stpetersburg3.jpg" style="width: 100%;" onclick="currentSlideS(3)" alt="StPetersburg">
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+
+    </body>
+</html>
