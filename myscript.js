@@ -17,6 +17,29 @@ function openCity(e, city) {
 /* Москва - слайд */
 var slideIndex = 1;
 
+/*мобильный*/
+var initialPoint, finalPoint;
+document.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    initialPoint = event.changedTouches[0];
+}, false);
+document.addEventListener('touchend', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    finalPoint = event.changedTouches[0];
+    var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+    if (xAbs > 20) {
+        if (finalPoint.pageX < initialPoint.pageX) {
+            showSlides(slideIndex += 1);
+        } else {
+            showSlides(slideIndex -= 1);
+        }
+    }
+});
+
+
+
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
