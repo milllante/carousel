@@ -1,3 +1,5 @@
+
+
 /* Панель навигации */
 function openCity(e, city) {
     var i, tabcontent, tablink;
@@ -15,7 +17,29 @@ function openCity(e, city) {
 
 
 /* Москва - слайд */
+
 var slideIndex = 1;
+    
+document.getElementById("mob").addEventListener('touchstart', start, false);
+document.getElementById("mob").addEventListener('touchend', end, false);
+var xDown;
+function start(evn) {
+    xDown = evn.touches[0].clientX;
+}
+function end(evn) {
+    if(! xDown) {
+        return;
+    }
+    var xUp = evn.changedTouches[0].clientX;
+    
+    var xDiff = xDown - xUp;
+    if (xDiff > 0) {
+        showSlides(slideIndex += 1);
+    } else {
+        showSlides(slideIndex -= 1);
+    }
+}
+
 
 
 function plusSlides(n) {
@@ -43,30 +67,48 @@ function showSlides(n) {
 }
 
 /* Санкт-Петербург - слайд */
+var slideIndexS = 1;
+document.getElementById("mob1").addEventListener('touchstart', startS, false);
+document.getElementById("mob1").addEventListener('touchend', endS, false);
+var xDownS;
 
-var IndexS = 1;
+function startS(evn) {
+    xDownS = evn.touches[0].clientX;
+}
+function endS(evn) {
+    if(! xDownS) {
+        return;
+    }
+    var xUp = evn.changedTouches[0].clientX;
+    var xDiff = xDownS - xUp;
+    if (xDiff > 0) {
+        showSlidesS(slideIndexS += 1);
+    } else {
+        showSlidesS(slideIndexS -= 1);
+    }
+}
 
 function plusSlidesS(n) {
-    showSlidesS(IndexS+=n);
+    showSlidesS(slideIndexS+=n);
 }
 
 function currentSlideS(n) {
-    showSlidesS(IndexS = n);
+    showSlidesS(slideIndexS = n);
 }
 
 function showSlidesS(n) {
     var i;
     var slides = document.getElementsByClassName("mySlideS");
     var demo = document.getElementsByClassName("demo");
-    if (n > slides.length) {IndexS = 1;}
-    if (n < 1) {IndexS = slides.length;}
+    if (n > slides.length) {slideIndexS = 1;}
+    if (n < 1) {slideIndexS = slides.length;}
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     for (i = 0; i < demo.length; i++) {
         demo[i].classList.remove("activeS");
     }
-    slides[IndexS-1].style.display = "block";
-    demo[IndexS-1].classList.add("activeS");
+    slides[slideIndexS-1].style.display = "block";
+    demo[slideIndexS-1].classList.add("activeS");
     
 }
